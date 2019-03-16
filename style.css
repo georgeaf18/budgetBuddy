@@ -1,5 +1,8 @@
+/****************** General Styles********************/
+
+
 body{
-    
+
 }
 
 
@@ -14,8 +17,30 @@ body{
 .expense {
     display: flex;
     justify-content: space-around;
+    
+}
+
+.expense_element {
+    margin: 10px ;
 }
 
 .inline {
     display: inline-block;
+}
+
+/****************** Caterogies Styles********************/
+
+.cat_parent_div {
+    width: 400px;
+    height: 400px;
+    border: 2px solid aqua;
+}
+
+.cat_div {
+    width: 80%;
+}
+
+.cat {
+    display: flex;
+    justify-content: space-around;
 }
