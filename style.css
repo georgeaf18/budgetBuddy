@@ -1,46 +1,227 @@
 /****************** General Styles********************/
-
+html{
+    
+}
 
 body{
+
+    font-family: 'Montserrat', sans-serif;
+}
+
+/****************** header Styles********************/
+
+.logo {
+    width: 100%;
+    text-align: center;
+}
+
+.balance_div {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.balance_text { /* and budget text */
+    color: rgb(146, 141, 141);
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 0;
+    display: inline;
+
+}
+
+.budget {
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 3rem;
+    width: 100%;
+    text-align: center;
+}
+
+.budget_div h1, .budget_div  {
+    display: inline;
+}
+
+.edit_icon {
+    display: inline;
+    text-align: center;
+
+}
+
+.budget_num  {
+    font-size: 3rem;
+    margin: 0;
+
+}
+
+.balance_separator p{
+    display: inline;
+}
+
+
+
+
+/****************** Caterogies Styles********************/
+
+.cat_parent_div {
+    width: 80%;
+    border-left: 2px solid black;
+    margin: 0 auto;
+    display: flex;
+}
+
+.arrows {
+    width: 80%;
+    margin: 20px auto;
+    font-size: 2rem;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.arrows p {
+    display: inline;
+    margin: 0;
+}
+
+.arrows i{
+    color: #33af0b;
+    cursor: pointer;
+}
+
+.cat_div {
+    width: 100%;
+}
+
+.cat_icon {
+    margin-right: 5px; 
+}
+
+.food_icon{
+    color: rgb(161, 16, 223);
+}
+
+.enter_icon{
+    color: #F9CA03;
+}
+
+.bills_icon{
+    color: #FF5E00;
+}
+
+.clothing_icon{
+    color:  rgb(18, 148, 230);
+}
+
+.cat {
+    margin: 15px auto 15px 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4rem;
 
 }
 
 
 /****************** Expenses Styles********************/
+.main {
+
+    margin-bottom: 100px;
+}
 
 .expensesDiv {
-    width: 300px;
-    height: 400px;
-    border: solid 1px black;
+    width: 80%;
+    height: auto;
+    
+    margin: 0 auto;
 }
 
 .expense {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    /* border-bottom: black solid 1px; */
+    margin: 10px 0;
+    font-size: 1.2rem;
+    position: relative;
+    height: 40px
     
+    
+    
+}
+
+/* .expense p, i{
+    margin: auto;
+} */
+
+.food_color{
+    border-left: solid 5px rgb(161, 16, 223);
+}
+
+.enter_color{
+    border-left: solid 5px #F9CA03;
+}
+
+.bills_color{
+    border-left: solid 5px #FF5E00;
+}
+
+.clothing_color{
+    border-left: solid 5px rgb(18, 148, 230);
 }
 
 .expense_element {
     margin: 10px ;
 }
 
+.expense span {
+    height: 50%;
+    margin: auto 0px;
+}
+
 .inline {
-    display: inline-block;
+    display: inline;
 }
 
-/****************** Caterogies Styles********************/
+.deleteIcon {
+    position: absolute;
+    right: -30px;
+   bottom: 0px;
+   
+   
 
-.cat_parent_div {
-    width: 400px;
-    height: 400px;
-    border: 2px solid black;
 }
 
-.cat_div {
-    width: 80%;
+.deleteIcon:hover {
+    color: white;
+    background-color: black;
+    border-radius: 20px;
+    padding: 7px;
+    right: -37px;
+    bottom: -7px;
+    
+
+    
 }
 
-.cat {
-    display: flex;
-    justify-content: space-around;
+
+.deleteIcon:active {
+    color: white;
+    background-color: black;
+    border-radius: 20px;
+    padding: 7px;
+    right: -37px;
+    bottom: -7px;
+    
+
+    
+}
+
+/****************** Add fixed button Styles********************/
+
+.add_button {
+    width: 80px;
+    height: 80px;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
 }
