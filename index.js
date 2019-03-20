@@ -11,6 +11,9 @@ const enter_cat = document.createElement('p');
 const bills_cat = document.createElement('p');
 const clothing_cat = document.createElement('p');
 
+
+
+
 let counter = 0; //determintes weeks
 
 let balance = 500;//starting budget/balance to be set at the start of the web app, also sets the budget
@@ -205,10 +208,57 @@ changeWeeks(){ //toggles between the arrays to change weeks
         this.weeks[counter].splice(index,1);
     }
 
+} //Budgetplanner()
+
+
+
+// Pop-up form for adding expenses
+
+        const addButton = document.querySelector('.addButton');
+        const main = document.querySelector('.main'); 
+        const body = document.querySelector('body');
+    
+    
+    addButton.addEventListener('click', () => {
+      const newAdd = document.createElement('div');
+      newAdd.className = 'fullPage';
+      const div = document.createElement('div');
+      div.innerHTML = ` 
+      <form>
+      <input name="entry name" type="text" placeholder="Entry Name"></input> <br></br>
+      <input name="price" type="text" placeholder="Price"></input> <br></br>
+      <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="#">Entertainment</a>
+      <a class="dropdown-item" href="#">Food</a>
+      <a class="dropdown-item" href="#">Clothing</a>
+      <a class="dropdown-item" href="#">Bills</a>
+      </div>
+      </div> <br></br>
+      </form>
+      `;
+      
+      const submitButton = document.createElement('button');
+      submitButton.textContent = 'Add Item';
+      submitButton.classList.add('btn', 'btn-secondary');
+      newAdd.appendChild(div);
+      div.appendChild(submitButton);
+      body.appendChild(newAdd);
+
+
+   // adds new form entry to the Expense array and removes the "new entry" popup
+      submitButton.addEventListener('click', () => {
+        body.removeChild(newAdd);
+    });
+
+    }); 
+
     
 
     
-}
+
 
 /*************************************** Display functions end *****************************************/
 
@@ -228,3 +278,5 @@ const planner = new budgetPlanner();
 planner.display();
 planner.displayBudget(balance);
 planner.changeWeeks();
+
+
