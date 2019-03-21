@@ -1,4 +1,5 @@
 const budget_div = document.querySelector('.budget_div');
+const alert_div = document.querySelector('.alert');
 const main_div = document.querySelector('.main');
 const expenses_div = document.querySelector('.expensesDiv');
 const cat_div = document.querySelector('.cat_div');
@@ -170,6 +171,7 @@ changeWeeks(){ //toggles between the arrays to change weeks
     display(){ //displays expenses
         budget_div.innerHTML= '';
         expenses_div.innerHTML = '';
+        alert_div.innerHTML ='';
         
         budget = parseFloat(budget);
         balanceHeader.classList.add('budget_num')
@@ -244,12 +246,18 @@ changeWeeks(){ //toggles between the arrays to change weeks
         const budget_p = document.querySelector('.budget');
         
         budget_p.innerText = `$${parseFloat(remainingBudget.toFixed(2))}`;
+
+
         
 
         balance = parseFloat(remainingBudget.toFixed(2));
 
 
-
+        if(remainingBudget <= 0){
+            alert_div.innerHTML = `Alert! You are out of money`;
+        } if(remainingBudget >=.01){
+            alert_div.innerHTML = ``;
+        }
         
         
         

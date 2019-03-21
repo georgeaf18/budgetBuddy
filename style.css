@@ -5,11 +5,24 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 
+.alert {
+    position: fixed;
+    width: 100%;
+    background-color: red;
+    color:white;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 4vw;
+}
+
 /****************** header Styles********************/
+
+
 
 .logo {
     width: 100%;
     text-align: center;
+
 }
 
 .balance_div {
@@ -300,6 +313,16 @@ body{
 } 
 
 @media only screen and (min-width: 1200px) {
+    .alert {
+        position: fixed;
+        width: 100%;
+        background-color: red;
+        color:white;
+        text-align: center;
+        font-weight: bolder;
+        font-size: 4vw;
+    }
+    
     .logo {
         width: 40%;
     }
