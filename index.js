@@ -6,6 +6,8 @@ const rightIcon = document.querySelector('.right');
 const leftIcon = document.querySelector('.left');
 const week_paragraph = document.querySelector('.arrows p');
 const balanceHeader = document.createElement('p');
+const total_expenses = document.querySelector('.total_expenses')
+const total_cats = document.querySelector('.total_cats')
 
 
 const food_cat = document.createElement('p');
@@ -16,11 +18,11 @@ const clothing_cat = document.createElement('p');
 let counter = 0; //determintes weeks
 
 let budget = 0;
-let balance = budget;//starting budget/balance to be set at the start of the web app, also sets the budget
+let balance = 0;//starting budget/balance to be set at the start of the web app, also sets the budget
 
 
 function balance_func() { //keeps balance from having more than 2 digits after floating point
-    return balance.toFixed(2);
+    return parseFloat(balance).toFixed(2);
 }
 
 
@@ -80,7 +82,7 @@ changeWeeks(){ //toggles between the arrays to change weeks
         
         counter++;
         console.log(counter);
-        week_paragraph.innerText = `Week ${counter + 1}`;
+        week_paragraph.innerText = `Expenses/Week ${counter + 1}`;
         balance_func();
         this.display();
 
@@ -95,7 +97,7 @@ changeWeeks(){ //toggles between the arrays to change weeks
         }
         
         counter--;
-        week_paragraph.innerText = `Week ${counter + 1}`;
+        week_paragraph.innerText = `Expenses/Week ${counter + 1}`;
         console.log(counter);
         this.display();
 
@@ -213,9 +215,7 @@ changeWeeks(){ //toggles between the arrays to change weeks
             const deleteIcon = document.createElement('i');
             
             deleteIcon.className = ('expense_element inline far fa-trash-alt deleteIcon');
-            // <i class="far fa-trash-alt"></i>
-            // <i class="fas fa-backspace"></i>
-            // <i class="fas fa-ban"></i>
+
             expenses_div.appendChild(expense);
 
             expense.appendChild(deleteIcon);
@@ -227,7 +227,15 @@ changeWeeks(){ //toggles between the arrays to change weeks
             this.display();
                 });
         }
+        balance = parseFloat(balanceHeader.innerText.replace('$', ""));
         this.displayBudget(balance - expenses);
+        expenses = parseFloat(expenses);
+        total_expenses.innerHTML = `Total $${expenses.toFixed(2)}`;
+        total_cats.innerHTML = `Total $${expenses.toFixed(2)}`;
+
+        
+        
+        
 
         this.display_categories();
     }
@@ -235,18 +243,40 @@ changeWeeks(){ //toggles between the arrays to change weeks
     displayBudget = (remainingBudget) => { //displays fixed budget
         const budget_p = document.querySelector('.budget');
         
-        budget_p.innerText = `$${remainingBudget.toFixed(2)}`;
+        budget_p.innerText = `$${parseFloat(remainingBudget.toFixed(2))}`;
+        
+
+        balance = parseFloat(remainingBudget.toFixed(2));
 
 
+
         
         
         
-        }
+    }
 
     delete(index){  //removes object from array when called and adds back balance
         
+        if(typeof balance === 'number'){
+        balance = balance.toString();
+        } 
+
+        if (balance.includes('$')){
+        balance = parseFloat(balance.replace('$', ''));
+        } 
         
+        
+        if (typeof balance === 'string'){
+            balance = parseFloat(balance);
+        }
+        console.log(balance);
+        console.log( typeof balance);
+        console.log(this.weeks[counter][index].price);
+
         balance += this.weeks[counter][index].price;
+
+        console.log(balance);
+
         
         this.weeks[counter].splice(index,1);
     }
@@ -256,6 +286,8 @@ changeWeeks(){ //toggles between the arrays to change weeks
             budget = balanceHeader.innerText;
             budget = budget.replace('$', '');
             this.displayBudget(parseFloat(budget, 10));
+            balance = balanceHeader.innerText;
+            
             
             
         });
@@ -283,5 +315,6 @@ const planner = new budgetPlanner();
 
 planner.display();
 planner.displayBudget(balance);
+
 planner.changeWeeks();
 planner.updateBudget();

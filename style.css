@@ -1,7 +1,4 @@
 /****************** General Styles********************/
-html{
-    
-}
 
 body{
 
@@ -17,16 +14,27 @@ body{
 
 .balance_div {
     margin: 20px 0;
-    display: flex;
-    justify-content: space-between;
+    width: 100%;
+    
+}
+
+.balance_div hr{
+    margin: 0px;
+    width: 2px;
+    border: none;
+    background-color: #33af0b;
 }
 
 
-.balance_text { /* and budget text */
+.balance_text{ /* and budget text */
     color: rgb(146, 141, 141);
     font-size: 1.2rem;
-    text-align: center;
     margin: 0;
+    text-align: center;
+
+}
+
+.budget_text {
     display: inline;
 
 }
@@ -55,14 +63,30 @@ body{
 
 }
 
+.budget_separator{
+    width: 100%;
+    text-align: center;
+
+}
+
+.balance_separator {
+    width: 100%;
+    text-align: center;
+}
+
 .balance_separator p{
     display: inline;
+    width: 100%;
 }
 
 
 
 
 /****************** Caterogies Styles********************/
+
+.cat_header {
+    visibility: hidden;
+}
 
 .cat_parent_div {
     width: 80%;
@@ -139,7 +163,6 @@ body{
 .expense {
     display: flex;
     justify-content: space-between;
-    /* border-bottom: black solid 1px; */
     margin: 10px 0;
     font-size: 1.2rem;
     position: relative;
@@ -149,9 +172,7 @@ body{
     
 }
 
-/* .expense p, i{
-    margin: auto;
-} */
+
 
 .food_color{
     border-left: solid 5px rgb(161, 16, 223);
@@ -216,6 +237,14 @@ body{
     
 }
 
+.total_expenses, .total_cats {
+    width: 91%;
+    margin-top: 30px;
+    font-size: 1.5rem;
+    text-align: end;
+    color: #33af0b;
+}
+
 /****************** Add fixed button Styles********************/
 
 .add_button {
@@ -224,4 +253,94 @@ body{
     position: fixed;
     right: 10px;
     bottom: 10px;
+}
+
+/****************** Media queries Styles********************/
+
+@media only screen and (min-width: 648px){
+    .logo {
+        width: 80%;
+        margin: 0 60px;
+    }
+}
+
+@media only screen and (min-width: 992px){
+    .logo{
+        width: 50%;
+    }
+
+    .balance_div {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .balance_separator {
+        width: auto;
+    }
+
+    .budget_separator {
+        width: auto;
+    }
+
+    .arrows {
+        display: block;
+        color: #33af0b;
+    }
+
+    
+
+    .arrows i{
+        margin: 0 20px;
+    }
+
+    
+
+    
+
+} 
+
+@media only screen and (min-width: 1200px) {
+    .logo {
+        width: 40%;
+    }
+
+    .balance_div {
+        width: 45%;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        height: 100px;
+        padding: 20px 0;
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        background-color: #fff;
+        z-index: 1;
+        
+    }
+    .cat_header {
+        visibility: visible;
+        position: absolute;
+        right: 45%;
+        bottom: 60%;
+        font-size: 2rem;
+        color: #33af0b;
+    }
+
+    .cat_parent_div {
+        margin-top: 250px;
+        
+    }
+
+    .expense {
+        border-bottom: dotted #33af0b 2px;
+    }
+
+    .total_cats, .total_expenses {
+        font-size: 1.7rem
+    }
+
+    
 }
