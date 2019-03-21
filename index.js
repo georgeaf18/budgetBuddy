@@ -264,8 +264,7 @@ changeWeeks(){ //toggles between the arrays to change weeks
         if (balance.includes('$')){
         balance = parseFloat(balance.replace('$', ''));
         } 
-        
-        
+
         if (typeof balance === 'string'){
             balance = parseFloat(balance);
         }
