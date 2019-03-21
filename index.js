@@ -82,7 +82,7 @@ changeWeeks(){ //toggles between the arrays to change weeks
         
         counter++;
         console.log(counter);
-        week_paragraph.innerText = `Expenses/Week ${counter + 1}`;
+        week_paragraph.innerText = `Week ${counter + 1}`;
         balance_func();
         this.display();
 
@@ -97,7 +97,7 @@ changeWeeks(){ //toggles between the arrays to change weeks
         }
         
         counter--;
-        week_paragraph.innerText = `Expenses/Week ${counter + 1}`;
+        week_paragraph.innerText = `Week ${counter + 1}`;
         console.log(counter);
         this.display();
 

@@ -153,6 +153,11 @@ body{
     margin-bottom: 100px;
 }
 
+.expenses_header {
+    text-align: center;
+    
+}
+
 .expensesDiv {
     width: 80%;
     height: auto;
@@ -291,6 +296,10 @@ body{
 
     .arrows i{
         margin: 0 20px;
+    }
+
+    .expenses_header {
+        color: #33af0b;
     }
 
     
