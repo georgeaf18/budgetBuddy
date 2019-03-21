@@ -255,6 +255,46 @@ body{
     bottom: 10px;
 }
 
+
+/* *****************Pop-Up Styles****************************/
+.fullPage {
+    height: 50vh;
+    width: 90vh;
+    background-color: #33af0b;
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+  }
+  
+  .submit {
+   background-color: grey;
+   width: 75px;
+   height: 50px;
+  }
+  
+  .dropdown {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .popup_location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 999999;
+    /* position: sticky; */
+
+  
+
+    
+  }
+
+
+
 /****************** Media queries Styles********************/
 
 @media only screen and (min-width: 648px){

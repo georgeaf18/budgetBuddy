@@ -264,8 +264,7 @@ changeWeeks(){ //toggles between the arrays to change weeks
         if (balance.includes('$')){
         balance = parseFloat(balance.replace('$', ''));
         } 
-        
-        
+
         if (typeof balance === 'string'){
             balance = parseFloat(balance);
         }
@@ -291,6 +290,46 @@ changeWeeks(){ //toggles between the arrays to change weeks
             
             
         });
+
+    const addButton = document.querySelector('.add_button');
+    const popup = document.querySelector('.popup_location'); 
+
+    addButton.addEventListener('click', () => {
+    const newAdd = document.createElement('div');
+    newAdd.className = 'fullPage';
+    const div = document.createElement('div');
+    div.innerHTML = ` 
+    <form>
+    <input name="entry name" type="text" placeholder="Entry Name"></input> <br></br>
+    <input name="price" type="text" placeholder="Price"></input> <br></br>
+    <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Entertainment</a>
+    <a class="dropdown-item" href="#">Food</a>
+    <a class="dropdown-item" href="#">Clothing</a>
+    <a class="dropdown-item" href="#">Bills</a>
+    </div>
+    </div> <br></br>
+    </form>
+
+    `;
+  
+    const submitButton = document.createElement('button');
+    submitButton.textContent = 'Add Item';
+    submitButton.classList.add('btn', 'btn-secondary');
+    newAdd.appendChild(div);
+    div.appendChild(submitButton);
+    popup.appendChild(newAdd);
+
+    // adds new form entry to the Expense array and removes the "new entry" popup
+    // needs to connect to George's code
+    submitButton.addEventListener('click', () => {
+    popup.removeChild(newAdd);
+    });
+    }); 
+
     }
 
     
