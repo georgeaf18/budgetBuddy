@@ -257,7 +257,10 @@ changeWeeks(){ //toggles between the arrays to change weeks
             alert_div.innerHTML = `Alert! You are out of money`;
         } if(remainingBudget >=.01){
             alert_div.innerHTML = ``;
+            alert_div.remove();
         }
+
+        
         
         
         

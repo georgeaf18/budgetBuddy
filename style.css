@@ -5,15 +5,28 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 
-.alert {
+header1{
     position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 2;
+}
+
+
+
+.alert, .alert div {
     width: 100%;
     background-color: red;
     color:white;
     text-align: center;
     font-weight: bolder;
     font-size: 4vw;
+    margin: 0;
+    padding: 5px 0;
 }
+
+
 
 /****************** header Styles********************/
 
@@ -22,6 +35,7 @@ body{
 .logo {
     width: 100%;
     text-align: center;
+    margin-top: 5px;
 
 }
 
@@ -304,7 +318,7 @@ body{
     align-items: center;
     position: fixed;
     z-index: 999999;
-    /* position: sticky; */
+    
 
   
 
@@ -318,13 +332,18 @@ body{
 @media only screen and (min-width: 648px){
     .logo {
         width: 80%;
-        margin: 0 60px;
+        margin: 5px 60px;
+    }
+
+    .alert {
+        font-size: 3vw;
     }
 }
 
 @media only screen and (min-width: 992px){
     .logo{
         width: 50%;
+ 
     }
 
     .balance_div {
@@ -355,6 +374,10 @@ body{
         color: #33af0b;
     }
 
+    .alert {
+        font-size: 2vw;
+    }
+
     
 
     
@@ -363,17 +386,11 @@ body{
 
 @media only screen and (min-width: 1200px) {
     .alert {
-        position: fixed;
-        width: 100%;
-        background-color: red;
-        color:white;
-        text-align: center;
-        font-weight: bolder;
-        font-size: 4vw;
+        z-index: 2
     }
     
     .logo {
-        width: 40%;
+        width: 45%;
     }
 
     .balance_div {
@@ -383,10 +400,8 @@ body{
     header {
         display: flex;
         justify-content: space-between;
-        height: 100px;
+        height: 180px;
         padding: 20px 0;
-        position: fixed;
-        top: 0px;
         width: 100%;
         background-color: #fff;
         z-index: 1;
