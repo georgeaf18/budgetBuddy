@@ -301,53 +301,61 @@ changeWeeks(){ //toggles between the arrays to change weeks
             
             
         });
-
-    const addButton = document.querySelector('.add_button');
-    const popup = document.querySelector('.popup_location'); 
-
-    addButton.addEventListener('click', () => {
-    const newAdd = document.createElement('div');
-    newAdd.className = 'fullPage';
-    const div = document.createElement('div');
-    div.innerHTML = ` 
-    <form>
-    <input name="entry name" type="text" placeholder="Entry Name"></input> <br></br>
-    <input name="price" type="text" placeholder="Price"></input> <br></br>
-    <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Entertainment</a>
-    <a class="dropdown-item" href="#">Food</a>
-    <a class="dropdown-item" href="#">Clothing</a>
-    <a class="dropdown-item" href="#">Bills</a>
-    </div>
-    </div> <br></br>
-    </form>
-
-    `;
-  
-    const submitButton = document.createElement('button');
-    submitButton.textContent = 'Add Item';
-    submitButton.classList.add('btn', 'btn-secondary');
-    newAdd.appendChild(div);
-    div.appendChild(submitButton);
-    popup.appendChild(newAdd);
-
-    // adds new form entry to the Expense array and removes the "new entry" popup
-    // needs to connect to George's code
-    submitButton.addEventListener('click', () => {
-    popup.removeChild(newAdd);
-    });
-    }); 
-
     }
 
+
+expenseForm() {
+    // const popupLocation = document.querySelector('popupLocation'); 
+    const submitButton = document.querySelector('#submitButton');
+    // const itemInput = document.querySelector('#itemInput');
+    // const priceInput = document.querySelector('#priceInput');
+    // const dropdownMenuButton = document.querySelector('#dropdownMenuButton');
+    // const popup = document.querySelector('#popup')
     
 
-    
+// ********adds new form entry to the Expense array and hides the "new entry" popup on submit*********
+   
+   
+submitButton.addEventListener('click', () => {
+    let item1 = document.querySelector('#itemInput').value;
+    let price1 = Number(document.querySelector('#priceInput').value);
+    let cat1 = document.querySelector('#exampleFormControlSelect1').value;
+    let newExpense = new Expense(item1, price1, cat1);
+    this.weeks[counter].push(newExpense);
+     // clear form after inputs
+    document.getElementById('expenseForm').reset();
+    // document.getElementById("popup").style.display = "none";
+    // document.getElementById("cancelButton").style.dispay = "none";
+    // document.getElementById("submitButton").style.dispay = "none";
+    this.display();
+
+    });
+   
 }
 
+// showPopup() {
+//     const popup = document.querySelector('#popup');
+//     const cancelButton = document.querySelector('#cancelButton');
+//     const addButton = document.querySelector('.add_Button');
+//     const submitButton = document.querySelector('#submitButton');
+
+// // *********makes new entry form visible when Add button is clicked**********
+// addButton.addEventListener('click', () => {
+//     document.getElementById("popup").style.display = "block";
+//     document.getElementById("cancelButton").style.display = "inline-block";
+//     document.getElementById("submitButton").style.display = "inline-block";
+// });
+
+// // *********hides new entry form when cancel button is clicked*************
+// cancelButton.addEventListener('click', () => {
+//     document.getElementById("popup").style.display = "none";
+//     document.getElementById("cancelButton").style.dispay = "none";
+//     document.getElementById("submitButton").style.dispay = "none";
+// });
+    
+// }
+
+}
 /*************************************** Display functions end *****************************************/
 
 
@@ -368,3 +376,6 @@ planner.displayBudget(balance);
 
 planner.changeWeeks();
 planner.updateBudget();
+// planner.showPopup();
+planner.expenseForm();
+

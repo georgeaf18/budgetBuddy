@@ -289,6 +289,16 @@ header1{
 
 
 /* *****************Pop-Up Styles****************************/
+/* #popup {
+    display: none;
+}
+#submitButton {
+    display: none;
+}
+#cancelButton {
+    display: none;
+} */
+
 .fullPage {
     height: 50vh;
     width: 90vh;
@@ -297,7 +307,6 @@ header1{
     display: flex;
     justify-content: center;
     align-items: center;
-
 
   }
   
