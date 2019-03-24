@@ -282,6 +282,10 @@ body{
 
 
 /* *****************Pop-Up Styles****************************/
+#popup {
+    display: none;
+}
+
 .fullPage {
     height: 50vh;
     width: 90vh;
@@ -291,7 +295,6 @@ body{
     justify-content: center;
     align-items: center;
    border-radius: 20px;
-
 
 
   }
