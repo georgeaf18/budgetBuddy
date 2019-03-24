@@ -252,14 +252,21 @@ changeWeeks(){ //toggles between the arrays to change weeks
 
         balance = parseFloat(remainingBudget.toFixed(2));
 
-
+        //changes the color of the balance to red and displays alert when balance is below or equal to 0
         if(remainingBudget <= 0){
             alert_div.innerHTML = `Alert! You are out of money`;
+            budget_p.style.color = 'red';
+            alert_div.style.visibility = 'visible';
+            alert_div.style.position = 'static';
+            
         } if(remainingBudget >=.01){
-            alert_div.innerHTML = ``;
-            alert_div.remove();
+            budget_p.style.color = '';
+            alert_div.style.visibility = 'hidden';
+            alert_div.style.position = 'absolute';
+
         }
 
+        
         
         
         

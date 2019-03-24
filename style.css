@@ -5,13 +5,6 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 
-header1{
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #fff;
-    z-index: 2;
-}
 
 
 
@@ -297,6 +290,8 @@ header1{
     display: flex;
     justify-content: center;
     align-items: center;
+   border-radius: 20px;
+
 
 
   }
@@ -318,6 +313,10 @@ header1{
     align-items: center;
     position: fixed;
     z-index: 999999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
     
 
   
@@ -382,6 +381,8 @@ header1{
 
     
 
+    
+
 } 
 
 @media only screen and (min-width: 1200px) {
@@ -411,13 +412,13 @@ header1{
         visibility: visible;
         position: absolute;
         right: 45%;
-        bottom: 60%;
+        bottom: 50%;
         font-size: 2rem;
         color: #33af0b;
     }
 
     .cat_parent_div {
-        margin-top: 250px;
+        margin-top: 350px;
         
     }
 
@@ -429,5 +430,12 @@ header1{
         font-size: 1.7rem
     }
 
+    header1{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: #fff;
+        z-index: 2;
+    }
     
 }
