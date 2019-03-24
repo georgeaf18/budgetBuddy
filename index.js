@@ -314,8 +314,7 @@ expenseForm() {
     
 
 // ********adds new form entry to the Expense array and hides the "new entry" popup on submit*********
-   
-   
+      
 submitButton.addEventListener('click', () => {
     let item1 = document.querySelector('#itemInput').value;
     let price1 = Number(document.querySelector('#priceInput').value);
@@ -324,38 +323,32 @@ submitButton.addEventListener('click', () => {
     this.weeks[counter].push(newExpense);
      // clear form after inputs
     document.getElementById('expenseForm').reset();
-    // document.getElementById("popup").style.display = "none";
-    // document.getElementById("cancelButton").style.dispay = "none";
-    // document.getElementById("submitButton").style.dispay = "none";
+    document.getElementById("popup").style.display = "none";
     this.display();
 
     });
    
 }
-
-// showPopup() {
-//     const popup = document.querySelector('#popup');
-//     const cancelButton = document.querySelector('#cancelButton');
-//     const addButton = document.querySelector('.add_Button');
-//     const submitButton = document.querySelector('#submitButton');
-
-// // *********makes new entry form visible when Add button is clicked**********
-// addButton.addEventListener('click', () => {
-//     document.getElementById("popup").style.display = "block";
-//     document.getElementById("cancelButton").style.display = "inline-block";
-//     document.getElementById("submitButton").style.display = "inline-block";
-// });
-
-// // *********hides new entry form when cancel button is clicked*************
-// cancelButton.addEventListener('click', () => {
-//     document.getElementById("popup").style.display = "none";
-//     document.getElementById("cancelButton").style.dispay = "none";
-//     document.getElementById("submitButton").style.dispay = "none";
-// });
-    
-// }
-
 }
+    const popup = document.querySelector('#popup');
+    const cancelButton = document.querySelector('#cancelButton');
+    const add_button = document.querySelector('.add_button');
+    const submitButton = document.querySelector('#submitButton');
+
+// *********makes new entry form visible when Add button is clicked**********
+add_button.addEventListener('click', () => {
+    document.getElementById("popup").style.display = "block";
+    document.getElementById("cancelButton").style.display = "inline-block";
+    document.getElementById("submitButton").style.display = "inline-block";
+});
+
+// *********hides new entry form when cancel button is clicked*************
+cancelButton.addEventListener('click', () => {
+    document.getElementById("popup").style.display = "none";
+});
+    
+
+
 /*************************************** Display functions end *****************************************/
 
 
@@ -376,6 +369,5 @@ planner.displayBudget(balance);
 
 planner.changeWeeks();
 planner.updateBudget();
-// planner.showPopup();
 planner.expenseForm();
 

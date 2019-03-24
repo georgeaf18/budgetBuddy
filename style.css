@@ -289,15 +289,9 @@ header1{
 
 
 /* *****************Pop-Up Styles****************************/
-/* #popup {
+#popup {
     display: none;
 }
-#submitButton {
-    display: none;
-}
-#cancelButton {
-    display: none;
-} */
 
 .fullPage {
     height: 50vh;
