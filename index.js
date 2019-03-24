@@ -27,12 +27,13 @@ function balance_func() { //keeps balance from having more than 2 digits after f
 }
 
 
+console.log("TCL: budgetPlanner -> constructor -> this.expenses1", typeof this.expenses1)
 class budgetPlanner{
     constructor(){
 
         this.weeks = [
-
-        this.expenses1 = [ //main array containing the expenses 
+            
+            this.expenses1 = [ //array containing the expenses 
             new Expense('Sandwich', 5.99, 'food'),
             new Expense('Movie', 11.99, 'entertainment'),
             new Expense('Car payment', 49.56, 'bills'),
@@ -44,22 +45,22 @@ class budgetPlanner{
             new Expense('Sushi', 133.24, 'food'),
         ],
 
-        this.expense2 = [
+        this.expense2 = [ //arrays containing the expenses
             new Expense('Socks', 8.98, 'clothing'),
             new Expense('PC', 245, 'entertainment'),
             new Expense('Juice', 34.98, 'food'),
             new Expense('Gas', 45.98, 'bills'),
         ],
 
-        this.expense3 = [
-            new Expense('underwear', 120, 'clothing'),
+        this.expense3 = [ //arrays containing the expenses
+            new Expense('Sneakers', 120, 'clothing'),
             new Expense('Videogame', 85, 'entertainment'),
             new Expense('Donuts', 67.98, 'food'),
             new Expense('Gym', 66.98, 'bills'),
             
         ],
 
-        this.expense4 = [
+        this.expense4 = [ //arrays containing the expenses
             new Expense('Jacket', 21.48, 'clothing'),
             new Expense('TV', 99, 'entertainment'),
             new Expense('Soup', 12.98, 'food'),
@@ -77,9 +78,10 @@ changeWeeks(){ //toggles between the arrays to change weeks
     rightIcon.addEventListener( 'click', () => {
 
         //checks if the week counter is higher than the quantity of weeks available and sets the counter to show the first week
-        if(counter >= this.weeks[counter].length - 1){ 
+        if(counter >= this.weeks.length - 1){ 
             counter = -1;
         }
+        console.log("TCL: budgetPlanner -> changeWeeks -> this.weeks[counter]", this.weeks[counter])
         
         counter++;
         console.log(counter);
@@ -198,19 +200,20 @@ changeWeeks(){ //toggles between the arrays to change weeks
             <p class = 'expense_element inline'>$${item.price}</p> 
             `;
 
-            if(item.category === 'food'){
+            //adds the colors to the expenses items  corresponding its categories
+            if(item.category === 'food' || item.category === 'Food'){
                 expense.classList.add('food_color');
             }
 
-            if(item.category === 'entertainment'){
+            if(item.category === 'entertainment' || item.category === 'Entertainment'){
                 expense.classList.add('enter_color');
             }
 
-            if(item.category === 'bills'){
+            if(item.category === 'bills' || item.category === 'Bills'){
                 expense.classList.add('bills_color');
             }
 
-            if(item.category === 'clothing'){
+            if(item.category === 'clothing' || item.category === 'Clothing'){
                 expense.classList.add('clothing_color');
             }
 
@@ -326,6 +329,7 @@ submitButton.addEventListener('click', () => {
     let item1 = document.querySelector('#itemInput').value;
     let price1 = Number(document.querySelector('#priceInput').value);
     let cat1 = document.querySelector('#exampleFormControlSelect1').value;
+	console.log("TCL: budgetPlanner -> expenseForm -> cat1", cat1)
     let newExpense = new Expense(item1, price1, cat1);
     this.weeks[counter].push(newExpense);
      // clear form after inputs

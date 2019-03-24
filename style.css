@@ -278,6 +278,7 @@ body{
     position: fixed;
     right: 10px;
     bottom: 10px;
+    cursor: pointer;
 }
 
 
@@ -332,25 +333,13 @@ body{
 /****************** Media queries Styles********************/
 
 @media only screen and (min-width: 648px){
-    .logo {
-        width: 80%;
-        margin: 5px 60px;
-    }
-
-    .alert {
-        font-size: 3vw;
-    }
-}
-
-@media only screen and (min-width: 992px){
-    .logo{
-        width: 50%;
- 
-    }
-
     .balance_div {
         display: flex;
         justify-content: space-evenly;
+    }
+    .logo {
+        width: 80%;
+        margin: 5px 60px;
     }
 
     .balance_separator {
@@ -359,6 +348,21 @@ body{
 
     .budget_separator {
         width: auto;
+    }
+
+    .alert {
+        font-size: 3vw;
+    }
+
+    hr {
+        height: auto;
+    }
+}
+
+@media only screen and (min-width: 992px){
+    .logo{
+        width: 50%;
+ 
     }
 
     .arrows {
