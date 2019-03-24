@@ -302,16 +302,14 @@ changeWeeks(){ //toggles between the arrays to change weeks
             
         });
     }
+/*************************************** Display functions end *****************************************/
 
+
+
+/****************************************Pop-Up Function Begin*****************************************/
 
 expenseForm() {
-    // const popupLocation = document.querySelector('popupLocation'); 
     const submitButton = document.querySelector('#submitButton');
-    // const itemInput = document.querySelector('#itemInput');
-    // const priceInput = document.querySelector('#priceInput');
-    // const dropdownMenuButton = document.querySelector('#dropdownMenuButton');
-    // const popup = document.querySelector('#popup')
-    
 
 // ********adds new form entry to the Expense array and hides the "new entry" popup on submit*********
       
@@ -323,33 +321,31 @@ submitButton.addEventListener('click', () => {
     this.weeks[counter].push(newExpense);
      // clear form after inputs
     document.getElementById('expenseForm').reset();
-    document.getElementById("popup").style.display = "none";
+    document.getElementById("hidden").style.display = "none";
     this.display();
-
-    });
-   
+    });  
 }
 }
-    const popup = document.querySelector('#popup');
+    const hidden = document.querySelector('#hidden');
     const cancelButton = document.querySelector('#cancelButton');
     const add_button = document.querySelector('.add_button');
     const submitButton = document.querySelector('#submitButton');
 
 // *********makes new entry form visible when Add button is clicked**********
 add_button.addEventListener('click', () => {
-    document.getElementById("popup").style.display = "block";
+    document.getElementById("hidden").style.display = "flex";
     document.getElementById("cancelButton").style.display = "inline-block";
     document.getElementById("submitButton").style.display = "inline-block";
 });
 
 // *********hides new entry form when cancel button is clicked*************
 cancelButton.addEventListener('click', () => {
-    document.getElementById("popup").style.display = "none";
+    document.getElementById("hidden").style.display = "none";
 });
     
+/************************************Pop-Up Functions End**********************************************/
 
 
-/*************************************** Display functions end *****************************************/
 
 
 class Expense{
