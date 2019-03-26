@@ -282,7 +282,9 @@ body{
     transform: translateY(-100%);
     left: 50%;
     transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.486);
+
+    background-color: rgba(0, 0, 0, 0.65);
+
     height: 100vh;
     width: 100vw;
     z-index: 999999;
@@ -292,9 +294,9 @@ body{
    display: flex;
    justify-content: center;
    align-items: center; 
-   border-radius: 5px;
-   background-image: radial-gradient(rgba(51, 172, 11, 1), rgba(51, 172, 11, 0.65)); 
-   /* background-color: #33ac0b; */
+   border-radius: 10px;
+   /* background-image: radial-gradient(rgba(51, 172, 11, 1), rgba(51, 172, 11, 0.65));  */
+   background-color: #33ac0b;
    width: 80vw;
    height: 70vh;
 }
@@ -350,13 +352,13 @@ input {
   }
 
 #submitButton {
-    margin: 30px 0px 0px;
+    margin: 30px 15px 0px;
     width: 80%;
     background-color: orange;
   }
 
 #cancelButton {
-    margin: 30px 0px 0px;
+    margin: 30px 15px 0px;
     width: 80%;
   }
  
@@ -396,23 +398,49 @@ input {
     
 }
 
-@media only screen and (max-width: 768px) and (orientation: landscape){
+@media only screen and (min-width: 648px) and (orientation: landscape){
 
     /* #popup{
         height: 90vh;
     } */
 
+    #popupButtons {
+        flex-direction: row;
+    }
+
     #submitButton {
-        margin: 15px 0px 0px;
+        margin: 15px 15px 0px;
+        width: 30%;
       }
     
     #cancelButton {
-        margin: 15px 0px 0px;
+        margin: 15px 15px 0px;
+        width: 30%;
       }
 
     
 } 
 
+@media only screen and (min-width: 768px) and (orientation: landscape){
+
+    #popup{
+        height: 90vh;
+    }
+
+    #popupButtons {
+        flex-direction: row;
+    }
+
+    #submitButton {
+        margin: 30px 15px 0px;
+        width: 30%;
+      }
+    
+    #cancelButton {
+        margin: 30px 15px 0px;
+        width: 30%;
+      }
+}
 @media only screen and (min-width: 992px){
     .logo{
         width: 50%;
@@ -422,9 +450,7 @@ input {
     .arrows {
         display: block;
         color: #33af0b;
-    }
-
-    
+    }    
 
     .arrows i{
         margin: 0 20px;
@@ -438,6 +464,13 @@ input {
         font-size: 2vw;
     }
 
+
+    #popupButtons {
+        flex-direction: row;
+    }
+
+
+    
     #popup {
         width: 50%;
         
@@ -446,6 +479,7 @@ input {
     #submitButton, #cancelButton {
         height: 130px;
         width: 300px;
+
     }
 
     input, .dropdown {
@@ -515,6 +549,18 @@ input {
         background-color: #fff;
         z-index: 2;
     }
+
+    #popupButtons {
+        flex-direction: row;
+    }
+
+    #submitButton {
+        width: 30%;
+      }
+    
+    #cancelButton {
+        width: 30%;
+      }
 
   
     
