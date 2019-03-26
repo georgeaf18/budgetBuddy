@@ -337,6 +337,7 @@ body{
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: 45%;
   }
 
 .dropdown {
@@ -477,13 +478,13 @@ input {
     }
 
     #submitButton, #cancelButton {
-        height: 130px;
-        width: 300px;
+        height: 50px;
+        width: 40%;
 
     }
 
     input, .dropdown {
-        height: 80px;
+        height: 40px;
     }
 
     
