@@ -81,10 +81,8 @@ changeWeeks(){ //toggles between the arrays to change weeks
         if(counter >= this.weeks.length - 1){ 
             counter = -1;
         }
-        console.log("TCL: budgetPlanner -> changeWeeks -> this.weeks[counter]", this.weeks[counter])
         
         counter++;
-        console.log(counter);
         week_paragraph.innerText = `Week ${counter + 1}`;
         balance_func();
         this.display();
@@ -289,13 +287,8 @@ changeWeeks(){ //toggles between the arrays to change weeks
         if (typeof balance === 'string'){
             balance = parseFloat(balance);
         }
-        console.log(balance);
-        console.log( typeof balance);
-        console.log(this.weeks[counter][index].price);
 
         balance += this.weeks[counter][index].price;
-
-        console.log(balance);
 
         
         this.weeks[counter].splice(index,1);
@@ -327,7 +320,6 @@ submitButton.addEventListener('click', () => {
     let item1 = document.querySelector('#itemInput').value;
     let price1 = Number(document.querySelector('#priceInput').value);
     let cat1 = document.querySelector('#exampleFormControlSelect1').value;
-	console.log("TCL: budgetPlanner -> expenseForm -> cat1", cat1)
     let newExpense = new Expense(item1, price1, cat1);
     this.weeks[counter].push(newExpense);
      // clear form after inputs
