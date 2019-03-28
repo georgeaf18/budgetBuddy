@@ -315,14 +315,17 @@ expenseForm() {
       
 submitButton.addEventListener('click', () => {
     let item1 = document.querySelector('#itemInput').value;
-    let price1 = Number(document.querySelector('#priceInput').value);
+    let price1 = Number(document.querySelector('#priceInput').value).toFixed(2);
     let cat1 = document.querySelector('#exampleFormControlSelect1').value;
+
+    if (item1 && price1 && cat1){
     let newExpense = new Expense(item1, price1, cat1);
     this.weeks[counter].push(newExpense);
      // clear form after inputs
     document.getElementById('expenseForm').reset();
     document.getElementById("hidden").style.display = "none";
     this.display();
+    }
     });  
 }
 }
