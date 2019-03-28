@@ -27,9 +27,12 @@ function balance_func() { //keeps balance from having more than 2 digits after f
 }
 
 
-console.log("TCL: budgetPlanner -> constructor -> this.expenses1", typeof this.expenses1)
 class budgetPlanner {
     constructor() {
+
+class budgetPlanner{
+    constructor(){
+
 
         this.weeks = [
 
@@ -91,6 +94,15 @@ class budgetPlanner {
         });
 
         leftIcon.addEventListener('click', () => {
+
+        //checks if the week counter is lower than the quantity of weeks available and resets the counter to the target the last week
+        if(counter <= 0){
+            counter = this.weeks.length;
+        }
+        
+        counter--;
+        week_paragraph.innerText = `Week ${counter + 1}`;
+        this.display();
 
             //checks if the week counter is lower than the quantity of weeks available and resets the counter to the target the last week
             if (counter <= 0) {
@@ -235,10 +247,6 @@ class budgetPlanner {
         expenses = parseFloat(expenses);
         total_expenses.innerHTML = `Total $${expenses.toFixed(2)}`;
         total_cats.innerHTML = `Total $${expenses.toFixed(2)}`;
-
-
-
-
 
         this.display_categories();
     }
