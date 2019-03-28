@@ -315,7 +315,7 @@ expenseForm() {
       
 submitButton.addEventListener('click', () => {
     let item1 = document.querySelector('#itemInput').value;
-    let price1 = Number(document.querySelector('#priceInput').value).toFixed(2);
+    let price1 = Number(document.querySelector('#priceInput').value);
     let cat1 = document.querySelector('#exampleFormControlSelect1').value;
 
     if (item1 && price1 && cat1){
