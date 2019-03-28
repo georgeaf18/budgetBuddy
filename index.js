@@ -27,7 +27,6 @@ function balance_func() { //keeps balance from having more than 2 digits after f
 }
 
 
-console.log("TCL: budgetPlanner -> constructor -> this.expenses1", typeof this.expenses1)
 class budgetPlanner{
     constructor(){
 
@@ -99,7 +98,6 @@ changeWeeks(){ //toggles between the arrays to change weeks
         
         counter--;
         week_paragraph.innerText = `Week ${counter + 1}`;
-        console.log(counter);
         this.display();
 
 
@@ -235,11 +233,10 @@ changeWeeks(){ //toggles between the arrays to change weeks
         expenses = parseFloat(expenses);
         total_expenses.innerHTML = `Total $${expenses.toFixed(2)}`;
         total_cats.innerHTML = `Total $${expenses.toFixed(2)}`;
-
         
         
         
-
+        
         this.display_categories();
     }
 
