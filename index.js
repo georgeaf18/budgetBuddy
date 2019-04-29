@@ -33,15 +33,7 @@ class budgetPlanner{
         this.weeks = [
             
             this.expenses1 = [ //array containing the expenses 
-            new Expense('Sandwich', 5.99, 'food'),
-            new Expense('Movie', 11.99, 'entertainment'),
-            new Expense('Car payment', 49.56, 'bills'),
-            new Expense('Jeans', 45.49, 'clothing'),
-            new Expense('Netflix', 12.99, 'entertainment'),
-            new Expense('Electricity', 32.56, 'bills'),
-            new Expense('Bikini', 30.43, 'clothing'),
-            new Expense('Orange', 1.24, 'food'),
-            new Expense('Sushi', 133.24, 'food'),
+           
         ],
 
         this.expense2 = [ //arrays containing the expenses
